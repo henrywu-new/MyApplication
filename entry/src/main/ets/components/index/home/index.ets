@@ -121,61 +121,68 @@ struct HomeTabContent {
           Tabs({ barPosition: BarPosition.Start }) {
             ForEach(['All','Sports','Politics','Business','Health','Travel','Science','Fashion'], (item:string) => {
               TabContent(){
-                Column({space: '10vp'}){
+                List({space: '10vp'}){
                   ForEach([1,2,3,4,4,5,5,6,6,4,4,4,4,3,3,3], () => {
-                    Row({space: '10vp'}){
-                      Image($r('app.media.demo_card'))
-                        .width('96vp')
-                        .height('96vp')
-                        .borderRadius('6vp')
-                      Column(){
-                        Text('Europe')
-                        Text('Ukraine\'s President Zelensky to BBC: Blood money being paid Blood money being paid')
-                          .textOverflow({overflow: TextOverflow.Ellipsis})
-                          .maxLines(2)
-                        Row(){
+                    ListItem(){
+                      Row({space: '10vp'}){
+                        Image($r('app.media.demo_card'))
+                          .width('96vp')
+                          .height('96vp')
+                          .borderRadius('6vp')
+                        Column(){
+                          Text('Europe')
+                          Text('Ukraine\'s President Zelensky to BBC: Blood money being paid Blood money being paid')
+                            .textOverflow({overflow: TextOverflow.Ellipsis})
+                            .maxLines(2)
                           Row(){
-                            Image($r('app.media.facebook'))
-                              .width('20vp')
-                              .height('20vp')
-                              .borderRadius('10vp')
-                            Text('BBC News')
-                              .fontColor('#4E4B66')
-                              .fontWeight(900)
-                              .margin({left: '5vp'})
-                            Image($r('app.media.icon_timer'))
+                            Row(){
+                              Image($r('app.media.facebook'))
+                                .width('20vp')
+                                .height('20vp')
+                                .borderRadius('10vp')
+                              Text('BBC News')
+                                .fontColor('#4E4B66')
+                                .fontWeight(900)
+                                .margin({left: '5vp'})
+                              Image($r('app.media.icon_timer'))
+                                .width('14vp')
+                                .height('14vp')
+                                .margin({left: '10vp'})
+                              Text('4h ago')
+                                .fontColor('#4E4B66')
+                                .margin({left: '2vp'})
+                            }
+                            .alignItems(VerticalAlign.Center)
+                            .layoutWeight(1)
+                            Image($r('app.media.icon_more'))
                               .width('14vp')
                               .height('14vp')
-                              .margin({left: '10vp'})
-                            Text('4h ago')
-                              .fontColor('#4E4B66')
-                              .margin({left: '2vp'})
                           }
-                          .alignItems(VerticalAlign.Center)
-                          .layoutWeight(1)
-                          Image($r('app.media.icon_more'))
-                            .width('14vp')
-                            .height('14vp')
                         }
+                        .height('100%')
+                        .padding({top: '10vp', bottom: '10vp'})
+                        .layoutWeight(1)
+                        .alignItems(HorizontalAlign.Start)
+                        .justifyContent(FlexAlign.SpaceBetween)
                       }
-                      .height('100%')
-                      .padding({top: '10vp', bottom: '10vp'})
-                      .layoutWeight(1)
-                      .alignItems(HorizontalAlign.Start)
-                      .justifyContent(FlexAlign.SpaceBetween)
+                      .height('112vp')
+                      .width('100%')
+                      .alignItems(VerticalAlign.Center)
                     }
-                    .height('112vp')
-                    .width('100%')
-                    .alignItems(VerticalAlign.Center)
                   })
                 }
+                .nestedScroll({
+                  scrollForward: NestedScrollMode.PARENT_FIRST,
+                  scrollBackward: NestedScrollMode.SELF_FIRST
+                })
+                .scrollBar(BarState.Off)
               }.tabBar(item)
             })
 
           }
           .barMode(BarMode.Scrollable)
         }
-        .margin({top: '10vp'})
+        // .margin({top: '10vp'})
       }
       .width('100%')
       .padding({ left: '20vp', right: '20vp'})
@@ -184,6 +191,8 @@ struct HomeTabContent {
     .width('100%')
     .height('100%')
     .align(Alignment.Top)
+    .edgeEffect(EdgeEffect.Spring)
+    .scrollBar(BarState.Off)
 
   }
 }
