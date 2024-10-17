@@ -1,3 +1,5 @@
+import { router } from '@kit.ArkUI'
+
 @Component
 struct HomeTabContent {
   build() {
@@ -168,6 +170,9 @@ struct HomeTabContent {
                       .height('112vp')
                       .width('100%')
                       .alignItems(VerticalAlign.Center)
+                      .onClick(() => {
+                        router.pushUrl({url: 'pages/news/Detail'})
+                      })
                     }
                   })
                 }
@@ -190,6 +195,7 @@ struct HomeTabContent {
     }
     .width('100%')
     .height('100%')
+    .padding({top: '20vp', bottom: '20vp'})
     .align(Alignment.Top)
     .edgeEffect(EdgeEffect.Spring)
     .scrollBar(BarState.Off)

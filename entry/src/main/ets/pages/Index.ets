@@ -48,19 +48,20 @@ struct Index {
         HomeTabContent()
       }.tabBar(this.tabBuilder('Home',0, $r("app.media.icon_home"), $r("app.media.icon_home_selected")))
       TabContent(){
-        Text('Explore')
+        ExploreTabContent()
       }.tabBar(this.tabBuilder('Explore',1,$r('app.media.icon_explore'), $r("app.media.icon_explore_selected")))
       TabContent(){
-        Text('Bookmark')
+        BookmarkTabContent()
       }.tabBar(this.tabBuilder('Bookmark',2,$r('app.media.icon_bookmark'), $r("app.media.icon_bookmark_selected")))
       TabContent(){
-        Text('Profile')
+        ProfileTabContent()
       }.tabBar(this.tabBuilder('Profile',3,$r('app.media.icon_profile'), $r("app.media.icon_profile_selected")))
     }.barPosition(BarPosition.End).animationDuration(0)
     .height('100%')
     .width('100%')
     .barHeight('78vp')
-    .barBackgroundColor('#fff8f7f7')
+    // .barBackgroundColor('#fff8f7f7')
+    // .shadow({radius: 20, offsetX: 0, offsetY: -20, color: '#f5f5f5'})
     .onChange((index) => {
       this.currentIndex = index
     })
