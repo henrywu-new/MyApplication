@@ -123,7 +123,7 @@ struct HomeTabContent {
           Tabs({ barPosition: BarPosition.Start }) {
             ForEach(['All','Sports','Politics','Business','Health','Travel','Science','Fashion'], (item:string) => {
               TabContent(){
-                List({space: '10vp'}){
+                List(){
                   ForEach([1,2,3,4,4,5,5,6,6,4,4,4,4,3,3,3], () => {
                     ListItem(){
                       Row({space: '10vp'}){
@@ -167,6 +167,7 @@ struct HomeTabContent {
                         .alignItems(HorizontalAlign.Start)
                         .justifyContent(FlexAlign.SpaceBetween)
                       }
+                      .margin({bottom: '10vp'})
                       .height('112vp')
                       .width('100%')
                       .alignItems(VerticalAlign.Center)
@@ -195,7 +196,7 @@ struct HomeTabContent {
     }
     .width('100%')
     .height('100%')
-    .padding({top: '20vp', bottom: '20vp'})
+    .margin({top: '20vp'})
     .align(Alignment.Top)
     .edgeEffect(EdgeEffect.Spring)
     .scrollBar(BarState.Off)

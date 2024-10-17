@@ -60,6 +60,7 @@ struct Index {
     .height('100%')
     .width('100%')
     .barHeight('78vp')
+    .divider({strokeWidth: '1vp', color: '#f5f5f5'})
     // .barBackgroundColor('#fff8f7f7')
     // .shadow({radius: 20, offsetX: 0, offsetY: -20, color: '#f5f5f5'})
     .onChange((index) => {
