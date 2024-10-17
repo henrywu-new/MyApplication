@@ -21,7 +21,12 @@ struct Detail {
       Navbar()
       Column() {
         Scroll(){
-          RichText(this.data).width('100%')
+          Column(){
+            Image($r('app.media.banner'))
+              .width('100%')
+              .height('200vp')
+            RichText(this.data).width('100%')
+          }
         }
         .width('100%')
         .layoutWeight(1)

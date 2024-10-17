@@ -85,7 +85,7 @@ struct ExploreTabContent {
                     .fontSize('16vp')
                   Row(){
                     Row(){
-                      Image($r('app.media.facebook'))
+                      Image($r('app.media.news'))
                         .width('20vp')
                         .height('20vp')
                         .borderRadius('10vp')

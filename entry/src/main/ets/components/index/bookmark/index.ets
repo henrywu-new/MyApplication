@@ -30,9 +30,10 @@ struct BookmarkTabContent {
           ForEach([1,2,3,4,4,5,5,6,6,4,4,4,4,3,3,3], () => {
             ListItem(){
               Row({space: '10vp'}){
-                Image($r('app.media.demo_card'))
+                Image($r('app.media.banner'))
                   .width('96vp')
                   .height('96vp')
+                  .objectFit(ImageFit.Cover)
                   .borderRadius('6vp')
                 Column(){
                   Text('Europe')
@@ -41,7 +42,7 @@ struct BookmarkTabContent {
                     .maxLines(2)
                   Row(){
                     Row(){
-                      Image($r('app.media.facebook'))
+                      Image($r('app.media.news'))
                         .width('20vp')
                         .height('20vp')
                         .borderRadius('10vp')
